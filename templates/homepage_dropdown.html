@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+    
+
+table {
+  margin-right: auto;
+  margin-left: auto;	
+}
+    
+input[type=button], input[type=submit], input[type=reset] {
+  background: transparent;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.bg-steel-blue, .bg-blue {
+    background-color: #4682b4;
+}
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.arizona-logo {
+    display: inline-block;
+    height: 20px;
+    margin: 19px 0 20px;
+    max-width: 80%;
+    float: left;
+    width: 276px;
+    padding: 0 0 0 .6rem;
+}
+.container:after, .container:before {
+    content: " ";
+    display: table;
+}
+
+:after, :before {
+    box-sizing: border-box;
+}
+
+.row {
+    margin-left: -16px;
+    margin-right: -16px;
+}
+
+.rowbanner {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.row:after, .row:before {
+    content: " ";
+    display: table;
+}
+
+.row:after {
+    clear: both;
+}
+
+.container:after {
+    clear: both;
+}
+
+
+footer {
+   position:absolute;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: red;
+   color: white;
+   text-align: center;
+   margin-top: -200px;
+
+}
+.center {
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+}
+    
+.navbar {
+  overflow: hidden;
+  background-color: #333; 
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.subnav {
+  float: left;
+  overflow: hidden;
+}
+
+.subnav .subnavbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .subnav:hover .subnavbtn {
+  background-color: red;
+}
+
+.subnav-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: red;
+  width: 100%;
+  z-index: 1;
+}
+
+.subnav-content a {
+  float: left;
+  color: white;
+  text-decoration: none;
+}
+
+.subnav-content a:hover {
+  background-color: #eee;
+  color: black;
+}
+
+.subnav:hover .subnav-content {
+  display: block;
+}
+</style>
+</head>
+<body>
+<header class="bg-cochineal-red">
+			<section class="container">
+				<div class="rowbanner"><a href="http://www.arizona.edu" title="The University of Arizona homepage" class="arizona-logo"><img alt="The University of Arizona Wordmark Line Logo White" src="https://brand.arizona.edu/sites/default/files/digital-resources/ua_wordmark_line_logo_white_rgb.svg" class="arizona-line-logo"></a></div>
+			</section>
+    </header>
+
+<div class="navbar">
+<div class="subnav">
+    <button class="subnavbtn"> Data Viewers <i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+		<form method="post" action="/layereddata">
+        <input type="submit" name="LayeredData" value="Layered Data Viewer">
+   	 	</form>
+
+		<form method="post" action="/nonlayered">
+        <input type="submit" name="NonLayered" value="Non Layered Data Viewer">
+   	 	</form>
+        
+        <form method="post" action="/irrigation" enctype="multipart/form-data">
+        <input type="submit" name="Irrigation" value="Irrigation Predictor">
+   	 	</form> 
+    </div> 
+    </div>
+     <div class="subnav">
+    <button class="subnavbtn"> Data Entry <i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+		<form method="post" action="/datainput">
+        <input type="submit" name="Input Field Data" value="Input Field Data">
+   	 	</form>
+
+		<form method="post" action="/irrigationinput">
+        <input type="submit" name="Input Irrigation Data" value="Input Irrigation Data">
+   	 	</form>
+        
+        <form method="post" action="/neutronprobe" enctype="multipart/form-data">
+        <input type="submit" name="Input Neutron Probe Data" value="Input Neutron Probe Data">
+   	 	</form> 
+        
+        <form method="post" action="/RSdata">
+        <input type="submit" name="Input Remote sensing data" value="Input Remote sensing data">
+   	 	</form>
+    </div> 
+    </div>
+    
+    <div class="subnav">
+    <button class="subnavbtn"> About <i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+		<form method="post" action="/thanks">
+        <input type="submit" name="Acknowledgements" value="Acknowledgements">
+   	 	</form>
+
+		<form method="post" action="/about">
+        <input type="submit" name="About the webpage" value="About the webpage">
+   	 	</form>
+        
+    </div> 
+    </div>
+    
+    <div class="subnav">
+    <button class="subnavbtn"> Login/Register <i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+		<form method="get" action="/login">
+        <input type="submit" name="Login" value="Login">
+   	 	</form>
+
+		<form method="get" action="/register">
+        <input type="submit" name="Register" value="Register">
+   	 	</form>
+        
+    </div> 
+    </div>
+    </div>
+    
+<div style="padding:0 16px" class='center'>    
+    <h3>Welcome to the WINDS website!</h3>
+    <p>This website features a wide array of tools to allow you to interact with the WINDS model. The tabs in the navigation bar are multi-purpose: Hover over them to see the various options at your disposal.</p>
+    <br>
+    
+    <h3> Data Viewers Tab</h3>
+    <p> The data viewers allow you to interact with model outputs and predict future irrigation.</p>
+    <br>
+    
+    <h3> Data Entry Tab</h3>
+    <p> The data entry allows registered users to establish their own plantings, irrigation data, neutron probe data, and remote sensing data. These inputs are then used by the model to produce outputs.</p>
+    <br>
+
+    </div>
+    
+    
+    <div class="footer" class='center'>
+			<img src="https://i.ibb.co/BTkZ92b/logos1234-removebg-preview.png" alt="Logos" style="width:800px" style="height:50px"> <p>Any opinions, findings, conclusions, or recommendations expressed in this publication are those of the author(s) and do not necessarily reflect the view of the U.S. Department of Agriculture. Grant # 2017-68005-26867.</p>
+
+		</div>
+</body>
+</html>

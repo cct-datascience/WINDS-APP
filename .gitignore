@@ -1,0 +1,4 @@
+venv/*
+.idea/*
+.Rproj.user/*
+.ebextensions/*

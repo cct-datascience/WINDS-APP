@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+	<title>WINDS Tables</title>
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='color.css') }}">
+</head>
+<body>
+<header class="bg-cochineal-red">
+			<section class="container">
+				<div class="rowbanner"><a href="http://www.arizona.edu" title="The University of Arizona homepage" class="arizona-logo"><img alt="The University of Arizona Wordmark Line Logo White" src="https://brand.arizona.edu/sites/default/files/digital-resources/ua_wordmark_line_logo_white_rgb.svg" class="arizona-line-logo"></a></div>
+			</section>
+		</header>
+	<div class="mainbody">
+		<div class=page>
+			<div id="result">
+				{% if site is defined %}
+					You have selected: {{ site}} <br>
+
+				You have selected: {{ variable}} as your variable of interest <br>
+
+				{% endif %}
+			  </div>
+
+			<div id="graph">
+			<img src="data:image/png;base64, {{ plot_url }}">
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+

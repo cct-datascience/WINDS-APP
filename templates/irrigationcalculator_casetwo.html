@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='color.css') }}">
+    <title>WINDS</title>
+</head>
+
+<body>
+  <header class="bg-cochineal-red">
+			<section class="container">
+				<div class="rowbanner"><a href="http://www.arizona.edu" title="The University of Arizona homepage" class="arizona-logo"><img alt="The University of Arizona Wordmark Line Logo White" src="https://brand.arizona.edu/sites/default/files/digital-resources/ua_wordmark_line_logo_white_rgb.svg" class="arizona-line-logo"></a></div>
+			</section>
+		</header>
+
+
+	<div class="mainbody">
+
+	<form id="form1" action="/irrigationcalculator" method="POST" enctype="multipart/form-data">
+        <p>Irrigation Calculator</p>
+	<p><b>Current Date:{{user_date_selection}} Current DOY: {{user_DOY}}</p></b>
+	<p><b>Irrigation amount: {{ Irr_depth}} inches on {{irr_date}}</p></b>
+	<p><b>Remaining water: {{raw_value}} inches</p></b>
+	<p><b>Current depletion: {{current_depl}} inches</p></b>
+	
+
+			<div id="graph">
+			<p> Actual Depletion Graph
+				<br>
+			<img src="data:image/png;base64, {{ plot_url_1 }}">
+				<br>
+				
+
+	  </form>
+
+	  </div>
+	</div>
+</body>
+</html><!DOCTYPE html>

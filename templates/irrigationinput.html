@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='color.css') }}">
+    <title>WINDS</title>
+</head>
+
+<body>
+  <header class="bg-cochineal-red">
+			<section class="container">
+				<div class="rowbanner"><a href="http://www.arizona.edu" title="The University of Arizona homepage" class="arizona-logo"><img alt="The University of Arizona Wordmark Line Logo White" src="https://brand.arizona.edu/sites/default/files/digital-resources/ua_wordmark_line_logo_white_rgb.svg" class="arizona-line-logo"></a></div>
+			</section>
+		</header>
+
+
+	<div class="mainbody">
+	<form id="form1" action="/irrigationsuccess" method="POST" enctype="multipart/form-data">
+	<p> Please insert the irrigation amount, and date. If you have multiple field sections, please enter the irrigation amounts for each section.</p>
+		
+
+		<label for="plantingname">Irrigation Date (YYYY-MM-DD):</label>
+  		<input type="text" id="irr_date" name="irr_date"><br><br>
+        
+        <p>Irrigation Type:</p> <select id="irr_type" name = "irr_type">
+		{% for each in irr_type %}
+		  <option value="{{each}}">{{each}}</option>
+		{% endfor %}
+		</select>
+        
+        <br>
+
+		<label for="sections">Enter the irrigation amount(s) (mm):</label>
+		
+		<table>
+   		 {% for x in range(fields | int) %}
+       		 <tr>
+            		<td>
+               	<input type="text" name='x' value="{{ x }}">
+            		</td>
+        		</tr>
+    		{% endfor %}
+		</table>
+
+		<input type="submit" value="Submit">
+	  </form>
+	</div>
+</body>
+</html>

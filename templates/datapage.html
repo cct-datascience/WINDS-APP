@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='color.css') }}">
+    <title>Database Tables</title>
+</head>
+
+<body>
+   <header class="bg-cochineal-red">
+			<section class="container">
+				<div class="rowbanner"><a href="http://www.arizona.edu" title="The University of Arizona homepage" class="arizona-logo"><img alt="The University of Arizona Wordmark Line Logo White" src="https://brand.arizona.edu/sites/default/files/digital-resources/ua_wordmark_line_logo_white_rgb.svg" class="arizona-line-logo"></a></div>
+			</section>
+		</header>
+
+  <form id="form1" action="/dataselection" method="POST" enctype="multipart/form-data">
+    <p>Select your desired site number and variable of interest.</p>
+    <select id="mySelect" name = "SiteNumber">
+    {% for each in dropdown_list %}
+      <option value="{{each}}">{{each}}</option>
+    {% endfor %}
+    </select>
+
+    <select id="mySelect2" name = "Variable">
+    {% for each in dropdown_list2 %}
+       <option value="{{each}}">{{each}}</option>
+    {% endfor %}
+    </select>
+
+    
+
+    <label>
+    Display Graph:
+    <input type="checkbox" name="phase1" />
+    </label>
+
+    <label>
+    Display Table:
+    <input type="checkbox" name="phase2" />
+    </label>
+
+
+
+    <input type="submit" value="Submit">
+  </form>
+
+  </div>
+</body>
+</html>

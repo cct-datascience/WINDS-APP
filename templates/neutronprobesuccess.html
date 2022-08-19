@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='color.css') }}">
+    <title>WINDS</title>
+</head>
+
+<body>
+  <header class="bg-cochineal-red">
+			<section class="container">
+				<div class="rowbanner"><a href="http://www.arizona.edu" title="The University of Arizona homepage" class="arizona-logo"><img alt="The University of Arizona Wordmark Line Logo White" src="https://brand.arizona.edu/sites/default/files/digital-resources/ua_wordmark_line_logo_white_rgb.svg" class="arizona-line-logo"></a></div>
+			</section>
+		
+		</header>
+
+	<div class="mainbody">
+        <br>
+
+		<P> You have successfully added a new neutron probe reading to the database. </P>
+        <p>Neutron Probe Date:{{date_NP}}  Current DOY: {{DOY}}</p>
+	    <p>Sum to Root Depth: {{sum_root_moisture}} mm</p>
+	    <p>Current depletion: {{current_depl}} mm, Current depletion percentage: {{depl_per}}</p>
+	
+        <br>
+                
+        <form action='/getPlotCSVneutron' method='post'>
+                <input type='submit', value="Download Data">
+                </form>
+
+    
+		<form action="/" method="GET" enctype="multipart/form-data">
+		<table border='0'>
+		<tr><td>
+
+		<div class="container">
+		<form method="post" action="/">
+        		<input type="submit" name="Homepage" value="Homepage">
+   	 	</form>
+ 		</div>
+		
+
+		<div class="footer">
+  		<img src="https://i.ibb.co/CtPry45/newlogo-removebg-preview.png" alt="Logos" style="width:800px">
+
+		</div>
+
+
+</body>
+</html>

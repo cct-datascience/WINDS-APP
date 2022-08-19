@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='color.css') }}">
+    <title>WINDS</title>
+</head>
+
+<body>
+  <header class="bg-cochineal-red">
+			<section class="container">
+				<div class="rowbanner"><a href="http://www.arizona.edu" title="The University of Arizona homepage" class="arizona-logo"><img alt="The University of Arizona Wordmark Line Logo White" src="https://brand.arizona.edu/sites/default/files/digital-resources/ua_wordmark_line_logo_white_rgb.svg" class="arizona-line-logo"></a></div>
+			</section>
+		</header>
+	<div class="container">
+	<form method="post" action="/">
+        	<input type="submit" name="InsertData" value="InsertData">
+   	 </form>
+ 	</div>
+
+	<div class="mainbody">
+			<br>
+	  <p>Select your desired planting number.</p>
+
+	  <form id="form1" action="/login" method="POST" enctype="multipart/form-data">
+		<table border='0'>
+		<tr><td>
+		Planting Number:</td><td> <select id="mySelect" name = "plant_name">
+		{% for each in dropdown_list %}
+		  <option value="{{each}}">{{each}}</option>
+		{% endfor %}
+		</select></td></tr><tr><td>
+
+		Data Select:<br>
+		{% for each in checkboxes %}
+            		<td><input id="{{ checkboxes }}" type="checkbox" name="mycheckboxes" value="{{each}}">
+   			 <label for="{{each}}">{{each}}</label>
+		{% endfor %}<br>
+
+		<br><input type="submit" value="Submit">
+	  </form>
+
+	  <p>When you select a new plant a function is triggered which outputs the value of the selected planting number.</p>
+	  <div id="result">
+		{% if plant_name is defined %}
+			You have selected: {{ plant_name}}
+		{% endif %}
+	  </div>
+	</div>
+</body>
+</html>

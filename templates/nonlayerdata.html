@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='color.css') }}">
+    <title>WINDS</title>
+</head>
+
+<body>
+  <header class="bg-cochineal-red">
+			<section class="container">
+				<div class="rowbanner"><a href="http://www.arizona.edu" title="The University of Arizona homepage" class="arizona-logo"><img alt="The University of Arizona Wordmark Line Logo White" src="https://brand.arizona.edu/sites/default/files/digital-resources/ua_wordmark_line_logo_white_rgb.svg" class="arizona-line-logo"></a></div>
+			</section>
+		</header>
+
+
+	<div class="mainbody">
+	<form id="form1" action="/nonlayerdataview" method="POST" enctype="multipart/form-data">
+ 	<p>Select your desired planting number.</p>
+ 	<p>Select your desired  planting name, field name, AND/OR account name.</p>
+	</td><td> <select id="mySelect1" name = "plant_name">
+		{% for each in plant_name %}
+		  <option value="{{each}}">{{each}}</option>
+		{% endfor %}
+		</select></td></tr><tr><td>
+	</td><td> <select id="mySelect2" name = "field_name">
+		{% for each in field_name %}
+		  <option value="{{each}}">{{each}}</option>
+		{% endfor %}
+		</select></td></tr><tr><td>
+	</td><td> <select id="mySelect3" name = "account_name">
+		{% for each in account_name %}
+		  <option value="{{each}}">{{each}}</option>
+		{% endfor %}
+		</select></td></tr><tr><td>
+
+			<br>
+	<p>Select the Soil Data you would like displayed.</p></td><td> <select id="mySelect" name = "nonlayered_data">
+		{% for each in nonlayered_data %}
+		  <option value="{{each}}">{{each}}</option>
+		{% endfor %}
+		</select></td></tr><tr><td>
+	 
+ 	<p>Select the DOY range you would like displayed.</p></p></td><td> <select id="mySelect" name = "DOY_1">
+		{% for each in DOY_1 %}
+		  <option value="{{each}}">{{each}}</option>
+		{% endfor %}
+		</select></td></tr><tr><td> 
+		<br>
+		<select id="mySelect" name = "DOY_2">
+		{% for each in DOY_2 %}
+		  <option value="{{each}}">{{each}}</option>
+		{% endfor %}
+		</select></td></tr><tr><td>
+		
+
+		<input type="submit" value="Submit">
+	  </form>
+
+	  </div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!doctype html>
+<title>WINDS Tables</title>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='color.css') }}">
+<div class=page>
+<select>
+	{% for each in dropdown_list %}
+  		<option value="{{each}}">{{each}}</option>
+	{% endfor %}
+</select>
+  <h1>Database Tables</h1>
+  {% for table in tables %}
+    <h2>{{titles[loop.index]}}</h2>
+    {{ table|safe }}
+  {% endfor %}
+</div>
+
+

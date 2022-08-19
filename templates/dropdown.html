@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='color.css') }}">
+    <title>WINDS</title>
+</head>
+
+<body>
+  <header class="bg-cochineal-red">
+			<section class="container">
+				<div class="rowbanner"><a href="http://www.arizona.edu" title="The University of Arizona homepage" class="arizona-logo"><img alt="The University of Arizona Wordmark Line Logo White" src="https://brand.arizona.edu/sites/default/files/digital-resources/ua_wordmark_line_logo_white_rgb.svg" class="arizona-line-logo"></a></div>
+			</section>
+		</header>
+	<div class="container">
+	<form method="post" action="/">
+        	<input type="submit" name="InsertData" value="InsertData">
+   	 </form>
+ 	</div>
+
+	<div class="mainbody">
+			<br>
+	  <p>Select your desired planting number.</p>
+
+	  <form id="form1" action="/login" method="POST" enctype="multipart/form-data">
+		<table border='0'>
+		<tr><td>
+		Planting Number:</td><td> <select id="mySelect" name = "plant_name">
+		{% for each in dropdown_list %}
+		  <option value="{{each}}">{{each}}</option>
+		{% endfor %}
+		</select></td></tr><tr><td>
+
+		Data Select:<br>
+		Kcb used<input type="checkbox" name="KcbUsed" />
+                Ke<input type="checkbox" name="Ke" />
+                Evaporation<input type="checkbox" name="Evap" />
+                Transpiration<input type="checkbox" name="Transpiration" />
+                ET<input type="checkbox" name="ET" /><br>
+                Potential Transpiration<input type="checkbox" name="PotTranspiration" />
+                Cumulative Potential ET<input type="checkbox" name="CumulativePotentialET" />
+                Cumulative Actual ET<input type="checkbox" name="CumulativeActualET" />
+                Reference ET<input type="checkbox" name="ReferenceET" />
+                One minus C<input type="checkbox" name="oneminusCn" />
+                Layer Water Content<input type="checkbox" name="WC" /><br>
+		Layer Depletion<input type="checkbox" name="Dep" />
+		Layer AF<input type="checkbox" name="AF" />
+		Layer Infiltration<input type="checkbox" name="Inf" />
+		Layer Percent Depletion<input type="checkbox" name="Pdep" />
+		Eq Max<input type="checkbox" name="EqMax" /><br>
+		Eq Max number<input type="checkbox" name="EqMaxNumber" />
+		Irrigation + Rain<input type="checkbox" name="IrrigationPlusRain" />
+		Leaching<input type="checkbox" name="Leaching" />
+		Depth Difference<input type="checkbox" name="DepthDifference" />
+		ET<input type="checkbox" name="ET1" />
+		Sum of sources and sinks<input type="checkbox" name="SumSourcesSinks" /><br>
+
+
+	  <p>Display by date or day of year.</p>
+		</td><td> <select id="mySelect3" name = "display_set">
+		{% for each in dropdown_list3 %}
+		   <option value="{{each}}">{{each}}</option>
+		{% endfor %}
+		</select></td></tr></table>
+
+
+		<input type="submit" value="Submit">
+	  </form>
+
+	  <p>When you select a new plant a function is triggered which outputs the value of the selected planting number.</p>
+	  <div id="result">
+		{% if plant_name is defined %}
+			You have selected: {{ plant_name}}
+		{% endif %}
+	  </div>
+	</div>
+</body>
+</html>

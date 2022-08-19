@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='color.css') }}">
+    <title>WINDS</title>
+</head>
+
+<body>
+  <header class="bg-cochineal-red">
+			<section class="container">
+				<div class="rowbanner"><a href="http://www.arizona.edu" title="The University of Arizona homepage" class="arizona-logo"><img alt="The University of Arizona Wordmark Line Logo White" src="https://brand.arizona.edu/sites/default/files/digital-resources/ua_wordmark_line_logo_white_rgb.svg" class="arizona-line-logo"></a></div>
+			</section>
+		
+
+
+
+		</header>
+
+<body>
+  <div class="login-box" >
+  <div class="login-header">Login</div>
+  <div class="login-body">
+   <p>Please enter your username and password</p>
+   <form class="form-group" action="{{ url_for('login') }}" method="post">
+    <label>Username</label>
+    <input type="text" class="form-control" name="username" placeholder="Username" id="username" required>
+    <label>Password</label>
+    <input type="password" class="form-control" name="password" placeholder="Password" id="password" required>
+    <input type="checkbox" value="checked"><b>Remember</b>
+    <input type="submit" value="Login" class="form-control btn btn-success " name="">
+   </form>
+   <div id="msg">{{ msg }}</div>
+   <p>No account <a href="{{ url_for('register') }}">Register</a></p>
+  </div>
+ </div>
+ </body>
+</html>

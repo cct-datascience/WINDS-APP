@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='color.css') }}">
+    <title>WINDS</title>
+</head>
+
+<body>
+  <header class="bg-cochineal-red">
+			<section class="container">
+				<div class="rowbanner"><a href="http://www.arizona.edu" title="The University of Arizona homepage" class="arizona-logo"><img alt="The University of Arizona Wordmark Line Logo White" src="https://brand.arizona.edu/sites/default/files/digital-resources/ua_wordmark_line_logo_white_rgb.svg" class="arizona-line-logo"></a></div>
+			</section>
+		</header>
+
+
+	<div class="mainbody">
+	
+	<p> You can either manually enter data or upload a .CSV file. If you choose to upload the file, please download the template & do not manually fill out the data </p>
+		
+		<form action='/gettemplate' method='post'>
+                <input type='submit', value="Download Template">	
+  		</form>	
+
+		<form id="form1" action="/datainputsuccess" method="POST" enctype="multipart/form-data">
+     		<input type="file" name="file">
+		
+		
+		<label for="plantingname">Planting Name:</label>
+  		<input type="text" id="plantingname" name="plantingname"><br><br>
+
+		<label for="fieldname">Field Name:</label>
+  		<input type="text" id="fieldname" name="fieldname"><br><br>
+
+        <p>Crop Name:</p>
+        <select id="cropname" name = "cropname">
+  		{% for each in cropname %}
+		  <option value="{{each}}">{{each}}</option>
+		{% endfor %}
+        </select>
+        <br>
+
+		<label for="plantingstart">Planting Start Date (YYYY-MM-DD):</label>
+  		<input type="text" id="plantingstart" name="plantingstart"><br><br>
+
+		<label for="plantingend">Planting End Date (YYYY-MM-DD):</label>
+  		<input type="text" id="plantingend" name="plantingend"><br><br>
+
+		<label for="sections">Enter the number of sections your field has:</label>
+		<input type="text" id="sections" name="sections"><br><br>
+
+
+		<p>Select the soil type of your field:</p>
+			</td><td> <select id="soil_select" name = "soil_select">
+		{% for each in soil_select %}
+		   <option value="{{each}}">{{each}}</option>
+		{% endfor %}
+		</select></td></tr></table>
+
+		<p>Select the weather station closest to your field:</p>
+			</td><td> <select id="ws_select" name = "WS_select">
+		{% for each in WS_select %}
+		   <option value="{{each}}">{{each}}</option>
+		{% endfor %}
+		</select></td></tr></table>
+
+
+
+		<input type="submit" value="Submit">
+	  </form>
+	</div>
+</body>
+</html>

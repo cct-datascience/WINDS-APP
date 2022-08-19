@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='color.css') }}">
+    <title>WINDS</title>
+</head>
+
+<body>
+  <header class="bg-cochineal-red">
+			<section class="container">
+				<div class="rowbanner"><a href="http://www.arizona.edu" title="The University of Arizona homepage" class="arizona-logo"><img alt="The University of Arizona Wordmark Line Logo White" src="https://brand.arizona.edu/sites/default/files/digital-resources/ua_wordmark_line_logo_white_rgb.svg" class="arizona-line-logo"></a></div>
+			</section>
+<form action="/login" method="get">
+  <button type="submit">Login</button>
+  <button type="submit" formaction="/register">Register</button>
+</form>
+
+		
+		</header>
+
+	<div class="mainbody">
+			<br>
+
+	<p>Select if you would like to view layered or non-layered soil data.</p>
+
+	  <form id="form1" action="/layereddata" method="POST" enctype="multipart/form-data">
+		<table border='0'>
+		<tr><td>
+
+		<div class="container">
+		<form method="post" action="/">
+        		<input type="submit" name="LayeredData" value="Layered Data">
+   	 	</form>
+
+	<form id="form2" action="/nonlayered" method="POST" enctype="multipart/form-data">
+		<table border='0'>
+		<tr><td>
+
+		<div class="container">
+		<form method="post" action="/">
+        		<input type="submit" name="NonLayered" value="Non Layered">
+   	 	</form>
+	<p>Interactive Irrigation Calculator</p>
+	<form id="form3" action="/irrigation" method="POST" enctype="multipart/form-data">
+		<table border='0'>
+		<tr><td>
+
+		<div class="container">
+		<form method="post" action="/">
+        		<input type="submit" name="Irrigation" value="Irrigation">
+   	 	</form>
+ 		</div>
+	<p>Input Field Data</p>
+	<form id="form4" action="/datainput" method="POST" enctype="multipart/form-data">
+		<table border='0'>
+		<tr><td>
+
+		<div class="container">
+		<form method="post" action="/">
+        		<input type="submit" name="Field Data" value="Field Data">
+   	 	</form>
+ 		</div>
+	<p>Input Irrigation Data</p>
+	<form id="form7" action="/irrigationinput" method="POST" enctype="multipart/form-data">
+		<table border='0'>
+		<tr><td>
+
+		<div class="container">
+		<form method="post" action="/">
+        		<input type="submit" name="Irrigation Data" value="Irrigation Data">
+   	 	</form>
+ 		</div>
+	
+
+	<form id="form5" action="/about" method="POST" enctype="multipart/form-data">
+		<table border='0'>
+		<tr><td>
+
+		<div class="container">
+		<form method="post" action="/">
+        		<input type="submit" name="About" value="About">
+   	 	</form>
+ 		</div>
+	
+
+
+	<form id="form6" action="/thanks" method="POST" enctype="multipart/form-data">
+		<table border='0'>
+		<tr><td>
+
+		<div class="container">
+		<form method="post" action="/">
+        		<input type="submit" name="Acknowledgements" value="Acknowledgements">
+   	 	</form>
+ 		</div>
+
+
+		<div class="footer">
+			<img src="https://i.ibb.co/BTkZ92b/logos1234-removebg-preview.png" alt="Logos" style="width:800px"> <P>Any opinions, findings, conclusions, or recommendations expressed in this publication are those of the author(s) and do not necessarily reflect the view of the U.S. Department of Agriculture. Grant # 2017-68005-26867.</p>
+
+		</div>
+
+
+</body>
+</html>
